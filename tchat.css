@@ -1,0 +1,44 @@
+body
+{
+    position: relative;
+}
+
+.connect
+{
+   border: 1px solid red;
+}
+
+.text
+{
+   border: 1px solid black;
+   width: 100%;
+   max-height: 600px;
+   overflow: auto;
+   
+}
+.lepost{
+    width: 95%;
+    padding: 0.313em;
+    border-radius: 3px;
+    border: 0.09em solid lightgrey;
+}
+.lepost {
+    display: inline-block;
+}
+
+.formulaire
+{
+    border: 1px solid yellowgreen;
+    min-height: 11em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.formulaire *{
+    display: inline-block;
+}
+#envoi{
+    
+    width: 50%;
+    height: 100px;
+}
