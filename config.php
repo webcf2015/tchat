@@ -1,8 +1,8 @@
 <?php
-define("DBHOST", "cl1-sql15");
-define("DBLOGIN", "dessycf2m12");
-define("DBMDP", "SDwcZnzfqrVG");
-define("DBNAME", "dessycf2m12");
+define("DBHOST", "localhost");
+define("DBLOGIN", "root");
+define("DBMDP", "");
+define("DBNAME", "tchat");
 //echo $chemin_absolu = $_SERVER['HTTP_HOST'];
 
 // chemin absolu vers le projet en cours
