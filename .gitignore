@@ -1,2 +1,4 @@
-/mesdatas/
-/config.php
+/mesdatas/*
+config.php
+/.htaccess
+/nbproject/*
