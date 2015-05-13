@@ -3,13 +3,34 @@ body
     position: relative;
     color: black;
 }
+.connexion
+{
+    width: 60%;
+    margin: auto;
+}
 
 .connect
 {
-   border: 1px solid blueviolet;
+   border: solid 1px;
    width:50%;
    margin:auto;
-   margin:20px;
+   padding: 1em 1em 1.5em 1em;
+   border-radius: 0.5em;
+   box-shadow: 5px 5px 10px #ccc;
+
+}
+
+input[type=text], input[type=password]
+{
+    border: 1px solid #ccc;
+    height: 1.5em;
+    border-radius: 1em;
+    padding-left: 1em;
+}
+
+input[type=submit]
+{
+    margin-top: 0.5em;
 }
 
 .text
