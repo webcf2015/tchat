@@ -3,9 +3,7 @@ session_start();
 if(isset($_SESSION['sessionid'])&& $_SESSION['sessionid']== session_id()){
   header("Location: tchat.php");
 }
-
 require_once 'connect.php';
-
 if (isset($_POST['lelogin'])&& isset($_POST['lemdp'])){
  $lelogin = htmlentities(strip_tags(trim($_POST['lelogin'])),ENT_QUOTES);
  $lemdp = htmlentities(strip_tags(trim($_POST['lemdp'])),ENT_QUOTES);
@@ -29,7 +27,6 @@ if (isset($_POST['lelogin'])&& isset($_POST['lemdp'])){
      $erreur = " Mauvais mot de passe ou login !";
  }  
 }
-
 ?>
 <!DOCTYPE html>
 
@@ -40,11 +37,12 @@ if (isset($_POST['lelogin'])&& isset($_POST['lemdp'])){
         <link rel="stylesheet" href="<?php echo PATH ?>/tchat.css"/>
     </head>
     <body>
+        <div class="connexion">
         <div class="connect">
         <form method="POST" action="" name="form">
             <label for="lelogin" ></label>
             <input id="lelogin" type="text"name="lelogin" placeholder="login" required/> 
-            <label for="lemdp"></label>
+            <label for="lemdp"></label> 
             <input id="lemdp" type="password" name="lemdp" placeholder="mot de passe"required/> 
             <input type="submit" value="se connecter"/>  
         </form>
@@ -56,6 +54,7 @@ if (isset($_POST['lelogin'])&& isset($_POST['lemdp'])){
         }
         
         ?>
+        </div>
         </div>
     </body>
 </html>
