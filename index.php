@@ -40,6 +40,7 @@ if (isset($_POST['lelogin'])&& isset($_POST['lemdp'])){
         <link rel="stylesheet" href="<?php echo PATH ?>/tchat.css"/>
     </head>
     <body>
+        <div class="connexion">
         <div class="connect">
         <form method="POST" action="" name="form">
             <label for="lelogin" ></label>
@@ -56,6 +57,7 @@ if (isset($_POST['lelogin'])&& isset($_POST['lemdp'])){
         }
         
         ?>
+        </div>
         </div>
     </body>
 </html>
