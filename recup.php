@@ -35,12 +35,14 @@ $sortie = "";
  */
 foreach ($recup as $key => $value) {
     $sortie .= "<div id='txt$key' class='lepost'>";
-    $sortie .= "<div style='float:left; margin-right:1em'><img src='".PATH.$value[3]."' title='".$value[2]."' alt='".$value[2]."' /></div>";
-    $sortie .="<div style='width:80%; float:left'>";
-    $sortie .= "<span style='font-size:1.5em; font-weight:bolder; color:green'>".$value[2]."</span><br /><span>".$value[1]."</span>";
+    $sortie .= "<div class='message'><img class='icon-recup' src='".PATH.$value[3]."' title='".$value[2]."' alt='".$value[2]."' /></div>";
+    $sortie .="<div class='msg-1'>";
+    $sortie .= "<span class='login'>".ucfirst($value[2])."</span><br /><span class='ladate'>".$value[1]."</span>";
     $sortie .= "<p>".$value[0]."</p>";
+	$sortie .= "<i></i>";
     $sortie .= "</div>";
     $sortie .= "</div>";
+	$sortie .="<div class='clear'></div>";
 }
 echo $sortie;
 
