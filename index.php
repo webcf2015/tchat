@@ -34,27 +34,51 @@ if (isset($_POST['lelogin'])&& isset($_POST['lemdp'])){
     <head>
         <meta charset="UTF-8">
         <title>Bienvenue!</title>
-        <link rel="stylesheet" href="<?php echo PATH ?>/tchat.css"/>
+        <link href='http://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="<?php echo PATH ?>/css/tchat.css"/>
+        <link rel="stylesheet" href="<?php echo PATH ?>/css/bootstrap.css" />
+        <style>
+		body{ backround:#3aada9}
+		</style>
     </head>
     <body>
         <div class="connexion">
-        <div class="connect">
-        <form method="POST" action="" name="form">
-            <label for="lelogin" ></label>
-            <input id="lelogin" type="text"name="lelogin" placeholder="login" required/> 
-            <label for="lemdp"></label> 
-            <input id="lemdp" type="password" name="lemdp" placeholder="mot de passe"required/> 
-            <input type="submit" value="se connecter"/>  
-        </form>
-        
-        <?php
-        if (isset($erreur)){
-        echo $erreur;
-        
-        }
-        
-        ?>
-        </div>
+            <h1>Bienvenue sur CF2m Tchat </h1>
+            <div class="connect one-login">
+                <div class="login-head">
+                     <img src="img/login-icon.png" alt="Connexion" />
+                     <h2>CONNEXION</h2>
+                     <span></span>
+                </div>
+                <form method="POST" action="" name="form">
+                <ul>
+                    <li>
+                        <input id="lelogin" type="text" name="lelogin" value="login" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Login';}" required/><a href="#" class=" icon user"></a> 
+                    </li>
+                    <li>
+                        <input id="lemdp" type="password" name="lemdp" value="mot de passe" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Mot de pass';}" required/><a href="#" class=" icon kumba"></a> 
+                    </li> 
+                 </ul>   
+                <div class="version-2">
+                   <label class="checkbox"><input type="checkbox" name="checkbox" checked /><i></i>Se Souvenir de moi</label>
+                   <h6><a href="#">Password perdu ?</a></h6>
+                   <div class="clear"></div>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="CONNEXION"/> 
+                </div>
+                <h5>Vous n'avez pas encore de compte ? <a href="#">S'enregistrer</a></h5>
+                     
+                </form>
+                
+                <?php
+                if (isset($erreur)){
+                echo $erreur;
+                
+                }
+                
+                ?>
+            </div>
         </div>
     </body>
 </html>
