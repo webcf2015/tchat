@@ -3,6 +3,7 @@ session_start();
 if(!isset($_SESSION['sessionid'])|| $_SESSION['sessionid']!= session_id()){
   header("Location: deconnect.php");
 }
+require_once 'config.php';
 require_once 'connect.php';
 
 // on va vérifier le nombre de lignes dans la db
