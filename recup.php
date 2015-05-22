@@ -19,7 +19,13 @@ $sql = "SELECT l.lemess, l.ladate, u.lelogin, u.avatar FROM lepost l
 $req = mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
 
 // récupération de toutes les lignes dans un tableau associatif
-$recup = mysqli_fetch_all($req);
+// $recup = mysqli_fetch_all($req);
+// ne fonctionne pas sur ovh
+
+$recup = array();
+while($ligne = mysqli_fetch_array($req)){
+    $recup[]=$ligne;
+}
 
 // on trie le contenu du tableau par les clefs par ordre descendant
 krsort($recup);
