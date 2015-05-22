@@ -59,7 +59,7 @@ function recup_texte(lurl, id_lescontenus, id_chargement,url_img_chargement) {
             }
         };
 
-        requete.send(null);
+        requete.send("?a=b");
     }
     return;
 }

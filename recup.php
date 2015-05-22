@@ -1,9 +1,11 @@
 <?php
 
 session_start();
+
 if(!isset($_SESSION['sessionid'])|| $_SESSION['sessionid']!= session_id()){
   header("Location: deconnect.php");
 }
+
 require_once 'connect.php';
 
     
