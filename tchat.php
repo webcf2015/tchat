@@ -23,7 +23,8 @@ $status = ($_SESSION['login'] == 'michael') ? 'Formateur' : 'Stagiaire';
                     'recup.php',
                     'lescontenus',
                     'chargement_contenu',
-                    '<?php echo PATH ?>/img/loader.gif'
+                    '<?php echo PATH ?>/img/loader.gif',
+                    true
                     );">
         <div class="container">
             <header>
@@ -75,7 +76,9 @@ $status = ($_SESSION['login'] == 'michael') ? 'Formateur' : 'Stagiaire';
                         <button id="envoyer" onclick="sauve_texte('<?php echo PATH ?>/sauve.php',
                                         'envoi',
                                         'chargement',
-                                        '<?php echo PATH ?>/img/loading.gif');">Envoyer</button>
+                                        '<?php echo PATH ?>/img/loading.gif',
+                                        'lescontenus',
+                                        true);">Envoyer</button>
                         <div id="chargement"></div>
                     </div>
                 </div>
@@ -89,7 +92,8 @@ $status = ($_SESSION['login'] == 'michael') ? 'Formateur' : 'Stagiaire';
                         'recup.php',
                         'lescontenus',
                         'chargement_contenu',
-                        '<?php echo PATH ?>/img/loader.gif'
+                        '<?php echo PATH ?>/img/loader.gif',
+                        false
                         );
             }, 3000);
 

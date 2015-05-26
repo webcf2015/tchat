@@ -35,7 +35,7 @@ function cree_xhr(){
  * 
  *
  */
-function recup_texte(lurl, id_lescontenus, id_chargement,url_img_chargement) {
+function recup_texte(lurl, id_lescontenus, id_chargement,url_img_chargement,en_bas) {
 
     var requete = cree_xhr();
 
@@ -56,6 +56,11 @@ function recup_texte(lurl, id_lescontenus, id_chargement,url_img_chargement) {
                 document.getElementById(id_chargement).innerHTML ="";
                 // on charge le contenu dans le div de contenu
                 document.getElementById(id_lescontenus).innerHTML = requete.responseText;
+                // si en_bas vaut vrai (chargement de la page)
+                if(en_bas){
+                    // mise de la scrollbar vers le bas
+                     mettre_curseur_en_bas(id_lescontenus);
+                }
             }
         };
 
@@ -69,7 +74,7 @@ function recup_texte(lurl, id_lescontenus, id_chargement,url_img_chargement) {
  * appel:
  * sauve_texte(url du fichier qui sauvegarde, id de l'élément dont on récupère le contenu, id du div affichant le loading, url de l'image de loading)
  */
-function sauve_texte(lurl,idcontenu,idchargement,url_img_loading){
+function sauve_texte(lurl,idcontenu,idchargement,url_img_loading,id_desc,en_bas){
     var requete = cree_xhr();
 
     if (requete === null) {
@@ -100,6 +105,11 @@ function sauve_texte(lurl,idcontenu,idchargement,url_img_loading){
                document.getElementById(idcontenu).value="";
                // on va lui redonner le focus
                document.getElementById(idcontenu).focus();
+               // si en_bas vaut vrai (chargement de la page)
+                if(en_bas){
+                    // mise de la scrollbar vers le bas
+                     mettre_curseur_en_bas(id_desc);
+                }
             }
         };
         // envoi du contenu en POST
@@ -113,7 +123,7 @@ function sauve_texte(lurl,idcontenu,idchargement,url_img_loading){
  * function qui va vérifier si il y a des changements dans la table lepost. Elle sera appelée toute les 3 secondes par un timer javascript se trouvant dans tchat.php
  * 
  */
-function verif_table(lurl,url_recup,id_lescontenus, id_chargement,url_img_chargement){
+function verif_table(lurl,url_recup,id_lescontenus, id_chargement,url_img_chargement,en_bas){
    var requete = cree_xhr();
    if (requete === null) {
        alert("Votre navigateur ne supporte pas AJAX!");
@@ -125,7 +135,7 @@ function verif_table(lurl,url_recup,id_lescontenus, id_chargement,url_img_charge
             if (requete.readyState===4 && requete.status === 200) {
                 if(requete.responseText==='change'){
                     // appel de la fonction de récupération du texte
-                    recup_texte(url_recup, id_lescontenus, id_chargement,url_img_chargement);
+                    recup_texte(url_recup, id_lescontenus, id_chargement,url_img_chargement,en_bas);
                 }
             }
        };
@@ -161,4 +171,13 @@ function metZero(i) {
         i = "0" + i;
     }
     return i;
+}
+
+/*
+ * 
+ * Mettre le curseur en bas
+ * 
+ */
+function mettre_curseur_en_bas(maDiv){
+    document.getElementById(maDiv).scrollTop = 10000;
 }
