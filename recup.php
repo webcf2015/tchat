@@ -46,7 +46,7 @@ foreach ($recup as $key => $value) {
     $sortie .= "<div class='message'><img class='icon-recup' src='".PATH.$value[3]."' title='".$value[2]."' alt='".$value[2]."' /></div>";
     $sortie .="<div class='msg-1'>";
     $sortie .= "<span class='login'>".ucfirst($value[2])."</span><br /><span class='ladate'>".$value[1]."</span>";
-    $sortie .= "<p>".$value[0]."</p>";
+    $sortie .= "<p>".html_entity_decode($value[0])."</p>";
 	$sortie .= "<i></i>";
     $sortie .= "</div>";
     $sortie .= "</div>";
