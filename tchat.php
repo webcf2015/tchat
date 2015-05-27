@@ -76,9 +76,15 @@ $status = ($_SESSION['login'] == 'michael') ? 'Formateur' : 'Stagiaire';
                         <button id="envoyer" onclick="sauve_texte('<?php echo PATH ?>/sauve.php',
                                         'envoi',
                                         'chargement',
-                                        '<?php echo PATH ?>/img/loading.gif',
-                                        'lescontenus',
-                                        true);">Envoyer</button>
+                                        '<?php echo PATH ?>/img/loading.gif');
+                                recup_texte(
+                    'recup.php',
+                    'lescontenus',
+                    'chargement_contenu',
+                    '<?php echo PATH ?>/img/loader.gif',
+                    true
+                    );
+                                            ">Envoyer</button>
                         <div id="chargement"></div>
                     </div>
                 </div>
