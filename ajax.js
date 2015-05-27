@@ -179,5 +179,5 @@ function metZero(i) {
  * 
  */
 function mettre_curseur_en_bas(maDiv){
-    document.getElementById(maDiv).scrollTop = 10000;
+    document.getElementById(maDiv).scrollTop = 900000;
 }
