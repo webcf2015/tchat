@@ -74,7 +74,7 @@ function recup_texte(lurl, id_lescontenus, id_chargement,url_img_chargement,en_b
  * appel:
  * sauve_texte(url du fichier qui sauvegarde, id de l'élément dont on récupère le contenu, id du div affichant le loading, url de l'image de loading)
  */
-function sauve_texte(lurl,idcontenu,idchargement,url_img_loading,id_desc,en_bas){
+function sauve_texte(lurl,idcontenu,idchargement,url_img_loading){
     var requete = cree_xhr();
 
     if (requete === null) {
@@ -105,11 +105,6 @@ function sauve_texte(lurl,idcontenu,idchargement,url_img_loading,id_desc,en_bas)
                document.getElementById(idcontenu).value="";
                // on va lui redonner le focus
                document.getElementById(idcontenu).focus();
-               // si en_bas vaut vrai (chargement de la page)
-                if(en_bas){
-                    // mise de la scrollbar vers le bas
-                     mettre_curseur_en_bas(id_desc);
-                }
             }
         };
         // envoi du contenu en POST
